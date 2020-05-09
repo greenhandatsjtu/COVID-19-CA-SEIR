@@ -12,12 +12,12 @@ recovered = 4
 exposed_temp = -1
 infectious_temp = -2
 
-N = 660000
-N_infected = 26  # initial infectious people
-N_recovered = 517440  # herd immunity number
-beta = 0.3
-gamma = 1 / 10
-sigma = 1 / 5
+N = 660000 # 总人口
+N_infected = 26  # 初始感染人口
+N_recovered = 517440  # 群体免疫阈值
+beta = 0.3 # 传染率
+gamma = 1 / 10 # 恢复率
+sigma = 1 / 5 # 暴露人员变为感染的概率
 
 # the number of each state during the simulation
 susceptible_list = []

@@ -18,11 +18,15 @@ pip install -r requirements.txt
 进入`main.py`，根据需要修改参数：
 
 ```python
-susceptible = 0
-exposed = 8
-infectious = 10
-recovered = 4
+N = 660000 # 总人口
+N_infected = 26  # 初始感染人口
+N_recovered = 517440  # 群体免疫阈值
+beta = 0.3 # 传染率
+gamma = 1 / 10 # 恢复率
+sigma = 1 / 5 # 暴露人员变为感染的概率
 ```
+
+各参数具体含义详见“**相关参数以及假设**”部分
 
 开始模拟：
 
