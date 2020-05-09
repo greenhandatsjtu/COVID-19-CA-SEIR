@@ -55,15 +55,15 @@ python gif.py
 + 平均潜伏期为6天
 + 平均住院时间 10天
 + 潜伏期也会传染
-+ $R_0$在2~3.5范围内
-+ 传染率$\beta=\gamma R_0=0.3$
-+ 恢复率$\gamma$ ，由平均住院时间 10天，得恢复率为$\frac{1}{10}$
-+ 暴露人员变为感染的概率$\sigma$，$\frac{1}{6}$
++ <a href="https://www.codecogs.com/eqnedit.php?latex=R_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_0" title="R_0" /></a>在2~3.5范围内
++ 传染率<a href="https://www.codecogs.com/eqnedit.php?latex=\beta=\gamma&space;R_0=0.3" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\beta=\gamma&space;R_0=0.3" title="\beta=\gamma R_0=0.3" /></a>
++ 恢复率<a href="https://www.codecogs.com/eqnedit.php?latex=\gamma" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\gamma" title="\gamma" /></a> ，由平均住院时间 10天，得恢复率为<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{10}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{10}" title="\frac{1}{10}" /></a>
++ 暴露人员变为感染的概率<a href="https://www.codecogs.com/eqnedit.php?latex=\sigma" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /></a>，<a href="https://www.codecogs.com/eqnedit.php?latex=\frac{1}{6}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\frac{1}{6}" title="\frac{1}{6}" /></a>
 + 英国总人口为6600万，截止2月18日全国感染人数为2626
 
-“群体免疫”通常是指，人群中易感个体的感染风险因免疫个体的存在而降低。这其实是一项传染病学的专业术语，但它是现象而非措施——因为人群中具有免疫能力的人达到一定数量而导致传染病传播受阻，**而非阻断传播的手段**。
+“群体免疫”通常是指，人群中易感个体的感染风险因免疫个体的存在而降低。
 
-具体的公式为：$$V_c=\frac{1-\frac{1}{R_0}}{E}$$，其中E是抗体有效力  ，其含义是有抗体者与对照个体之间的感染传播减少率；而$V_c$即为临界免疫水平。$R_0$可保守估计为3,而根据[广东省疾控中心的说法](https://3g.163.com/news/article_cambrian/F6I5TTVG053299CD.html)，出院患者复阳率为14%，因此保守估计E=85%。由此可得$V_c=\frac{1-\frac{1}{3}}{0.85}=78.4\%$，即英国人口的78.4%被感染后，疫情才能被有效抑制，比英国政府所说的60%要高许多。接下来对78.4%的人口具有免疫力时的情况进行模拟
+具体的公式为：<a href="https://www.codecogs.com/eqnedit.php?latex=V_c=\frac{1-\frac{1}{R_0}}{E}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_c=\frac{1-\frac{1}{R_0}}{E}" title="V_c=\frac{1-\frac{1}{R_0}}{E}" /></a>，其中E是抗体有效力  ，其含义是有抗体者与对照个体之间的感染传播减少率；而<a href="https://www.codecogs.com/eqnedit.php?latex=V_c" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_c" title="V_c" /></a>即为临界免疫水平。<a href="https://www.codecogs.com/eqnedit.php?latex=R_0" target="_blank"><img src="https://latex.codecogs.com/gif.latex?R_0" title="R_0" /></a>保守估计为3,而根据[广东省疾控中心的说法](https://3g.163.com/news/article_cambrian/F6I5TTVG053299CD.html)，出院患者复阳率为14%，因此保守估计E=85%。由此可得<a href="https://www.codecogs.com/eqnedit.php?latex=V_c=\frac{1-\frac{1}{3}}{0.85}=78.4\%" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_c=\frac{1-\frac{1}{3}}{0.85}=78.4\%" title="V_c=\frac{1-\frac{1}{3}}{0.85}=78.4\%" /></a>，即英国人口的78.4%被感染后，疫情才能被有效抑制。接下来对78.4%的人口具有免疫力时的情况进行模拟
 
 同时，对模型做出如下假设：
 
@@ -75,7 +75,7 @@ python gif.py
 
 模拟的数据量相比真实数据缩小100倍，即660,000人，截止2月18日有26人确诊。
 
-由于本模型假设康复后不再具有传染性也不再被传染，所以E仍然取1,算得$V_c=67\%$，此时`recovered`人群有442200(00)人。由于随机性，实际上元胞自动机初始时的`recovered`人群为441793(00),由此开始模拟，初始化元胞自动机后，让其运行90天（3个月），得到下图：
+由于本模型假设康复后不再具有传染性也不再被传染，所以E仍然取1,算得<a href="https://www.codecogs.com/eqnedit.php?latex=V_c=67\%" target="_blank"><img src="https://latex.codecogs.com/gif.latex?V_c=67\%" title="V_c=67\%" /></a>，此时`recovered`人群有442200(00)人。由于随机性，实际上元胞自动机初始时的`recovered`人群为441793(00),由此开始模拟，初始化元胞自动机后，让其运行90天（3个月），得到下图：
 
 ![Herd Immunity](./pics/herd.png)
 
